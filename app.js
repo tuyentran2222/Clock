@@ -20,11 +20,11 @@ function setClock() {
   if (hour < 10) second = '0'+ hour;
   let am = "AM";
   if (hour > 12)  am = "PM";
+  hour = hour > 12 ? hour - 12 : hour;
   setDigitalTime(hourEle, hour);
   setDigitalTime(minuteEle, minute);
   setDigitalTime(secondEle, second);
   setDigitalTime(amEle, am);
-  hour = hour > 12 ? hour - 12 : hour;
   setRotation(secondHand, secondsRatio);
   setRotation(minuteHand, minutesRatio);
   setRotation(hourHand, hoursRatio);
